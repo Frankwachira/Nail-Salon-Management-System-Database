@@ -42,56 +42,7 @@ Promotions - Managing special offers and discounts
 
 Schedules - Knowing when your team is available
 
-🚀 Getting Started
-Easy Installation
-Make sure you have MySQL installed on your computer
 
-Open your MySQL client (like MySQL Workbench or command line)
-
-Run the database file:
-
-sql
-source nail_salon_database.sql;
-Or if you're using the command line:
-
-bash
-mysql -u your_username -p < nail_salon_database.sql
-Adding Your First Clients
-sql
--- Add your first happy customer!
-INSERT INTO customers (first_name, last_name, phone, email)
-VALUES ('Jessica', 'Smith', '555-1234', 'jessica@email.com');
-Setting Up Your Services
-sql
--- Add your most popular service
-INSERT INTO services (service_name, duration_minutes, price, category)
-VALUES ('Deluxe Spa Pedicure', 75, 65.00, 'pedicure');
-💡 Example Uses
-See Today's Appointments
-sql
-SELECT c.first_name, c.last_name, s.service_name, 
-       a.start_time, t.first_name as technician
-FROM appointments a
-JOIN customers c ON a.customer_id = c.customer_id
-JOIN services s ON a.service_id = s.service_id
-JOIN technicians t ON a.technician_id = t.technician_id
-WHERE a.appointment_date = CURDATE()
-ORDER BY a.start_time;
-Check Your Inventory
-sql
--- See what's running low
-SELECT product_name, brand, quantity_in_stock
-FROM products 
-WHERE quantity_in_stock < reorder_level;
-Find Your Top Clients
-sql
--- Your most loyal customers
-SELECT c.first_name, c.last_name, COUNT(a.appointment_id) as visits
-FROM customers c
-JOIN appointments a ON c.customer_id = a.customer_id
-GROUP BY c.customer_id
-ORDER BY visits DESC
-LIMITE 10;
 🎨 Why You'll Love This System
 For Salon Owners:
 
