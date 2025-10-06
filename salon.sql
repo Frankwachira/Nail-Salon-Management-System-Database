@@ -1,5 +1,5 @@
 -- Nail Salon Management System Database
-CREATE DATABASE IF NOT EXISTS nail_salon_management;
+CREATE DATABASE IF Not exist nail_salon_management;
 USE nail_salon_management;
 
 -- 1. Customers Table
@@ -184,7 +184,7 @@ CREATE TABLE appointment_promotions (
     INDEX idx_appointment_discounts (appointment_id)
 );
 
--- Insert sample data for demonstration
+--  sample data for demonstration
 INSERT INTO customers (first_name, last_name, email, phone) VALUES 
 ('Sarah', 'Johnson', 'sarah.j@email.com', '555-0101'),
 ('Maria', 'Garcia', 'maria.g@email.com', '555-0102'),
@@ -207,7 +207,7 @@ INSERT INTO products (product_name, brand, product_type, color_code, quantity_in
 ('Nail File Pack', 'SalonCare', 'tool', NULL, 50, 5.00),
 ('Cuticle Oil', 'Essie', 'consumable', NULL, 30, 10.00);
 
--- Create triggers for inventory management
+-- triggers for inventory management
 DELIMITER //
 
 CREATE TRIGGER after_appointment_products_insert
